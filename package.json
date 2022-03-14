@@ -1,0 +1,19 @@
+{
+  "name": "e-wallet",
+  "version": "1.0.0",
+  "description": "Payment Wallet Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mayank-kr/E-Wallet.git"
+  },
+  "author": "Mayank Kumar, Yogesh Tiwari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mayank-kr/E-Wallet/issues"
+  },
+  "homepage": "https://github.com/mayank-kr/E-Wallet#readme"
+}
