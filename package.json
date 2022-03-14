@@ -15,5 +15,14 @@
   "bugs": {
     "url": "https://github.com/mayank-kr/E-Wallet/issues"
   },
-  "homepage": "https://github.com/mayank-kr/E-Wallet#readme"
+  "homepage": "https://github.com/mayank-kr/E-Wallet#readme",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3",
+    "express-handlebars": "^6.0.3",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
 }
