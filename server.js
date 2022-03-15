@@ -1,25 +1,17 @@
 const mysql = require("mysql");
 const bodyParser = require("body-parser");
 const express = require("express");
+const userRoutes = require("./routes/user");
+const userdetailsRoutes = require("./routes/userdetails");
+const transactionRoutes = require("./routes/transaction");
+const contactRoutes = require("./routes/contact");
 
 var app = express();
 app.use(bodyParser.json());
 
-var mysqlConnection = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "y1o1g1e1s1h1",
-    database: "lab5q1",
-    multipleStatements: true
-})
-
-mysqlConnection.connect((err)=>{
-    if(!err){
-        console.log("Connected");
-    }
-    else{
-        console.log(err);
-    }
-})
+app.use("/user", userRoutes);
+app.use("/userdetails", userdetailsRoutes);
+app.use("/transaction", transactionRoutes);
+app.use("/contact", contactRoutes);
 
 app.listen(3000);
