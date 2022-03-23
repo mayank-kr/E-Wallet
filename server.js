@@ -25,6 +25,15 @@ app.use("/contact", contactRoutes);
 app.get("/", function (req, res) {
     res.sendFile(__dirname + "/index.html");
   });
+  app.get("/view.html", function (req, res) {
+    res.sendFile(__dirname + "/view.html");
+  });
+  app.get("/update.html", function (req, res) {
+    res.sendFile(__dirname + "/update.html");
+  });
+  app.get("/delete.html", function (req, res) {
+    res.sendFile(__dirname + "/delete.html");
+  });
 
 //DELETE method to delete entries
 app.delete("/deleteuser",(req,res)=>{
@@ -66,4 +75,12 @@ app.put("/updateuser",(req,res)=>{
     })
 })
 
+app.post("/export", (req,res)=>{
+    mysqlConnection.query("TABLE user INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/output.csv' FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"' ESCAPED BY '' LINES TERMINATED BY '\n';", [],(err,rows,fields)=>{
+        if(!err)
+        res.send("Exported Successfully");
+        else
+        console.log(err);
+    })
+})
 app.listen(3000);
